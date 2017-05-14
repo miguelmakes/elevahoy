@@ -1,0 +1,187 @@
+/*
+Theme Name:     ElevaHoy
+Theme URI:
+Description:    Child theme for Canvas Base Mark 1.5
+Author:         Miguel Molina
+Author URI:     miguelmolina.co
+Template:       canvasbase
+Version:        1.0
+*/
+
+@import url("../canvasbase/style.css");
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    /* Sticky Footer V.1 */
+    /*position: relative;
+    min-height: 100%;*/
+}
+
+body {
+    padding-top: 0;
+    /* Sticky Footer V.1 */
+    /*margin-bottom: 107px;*/
+}
+
+.container {
+    max-width: 960px;
+}
+
+.canvas-head {
+    height: 72px;
+    margin-bottom: 0;
+}
+
+.canvas-navbar {
+    background-color: #5CA3FF;
+}
+
+.navbar-brand {
+    height: 72px;
+}
+
+.navbar-brand > img {
+    max-width: 140px;
+    width: 100%;
+    height: auto;
+}
+
+#welcome {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: #D3D3D3;
+    background-image: url("http://elevahoy.com/wp-content/uploads/2016/11/background.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#welcome-wrap {
+    margin: auto;
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 85%;
+}
+
+#welcome-box {
+    color: #fff;
+    height: auto;
+    width: 100%;
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 80px 40px;
+}
+
+#welcome-box img {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+}
+
+#welcome-box h1,
+#welcome-box p {
+    margin-bottom: 40px;
+}
+
+#welcome-box p {
+    font-size: 22px;
+}
+
+#welcome-box a.canvas-btn {
+    background-color: #FF7484;
+    font-size: 24px;
+    padding: 6px 16px;
+}
+
+.page-welcome {
+    background-color: #5CA3FF;
+    color: #FFF;
+    width: 100%;
+    height: auto;
+    padding: 20px 0 30px 0;
+}
+
+.page-welcome h1 {
+    font-size: 52px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.page-welcome h3 {
+    letter-spacing: 1.2;
+    margin-top: 0;
+}
+
+#chapters a:hover {
+    text-decoration: none;
+}
+
+.chapter-box {
+    background-color: #FF7484;
+    max-width: 275px;
+    width: 100%;
+    height: 275px;
+    margin: 48px auto 0 auto;
+    padding-top: 65px;
+    display: block;
+}
+
+.chapter-box h2 {
+    color: #FFF;
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#my-contact {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.canvas-footer {
+    /* Sticky Footer V.1 */
+    /*position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 107px;*/
+}
+
+@media screen and (max-width: 414px) {
+    #welcome-box {
+        padding-top: 40px;
+    }
+
+    #welcome-box img {
+        max-width: 215px;
+    }
+
+    #welcome-box h1 {
+        font-size: 30px;
+    }
+
+    #welcome-box p {
+        font-size: 18px;
+    }
+
+    .page-welcome h1 {
+        font-size: 34px;
+    }
+
+    .page-welcome h3 {
+        font-size: 22px;
+    }
+}
