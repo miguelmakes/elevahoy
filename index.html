@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Eleva Hoy</title>
+    </head>
+    <body>
+        <p>Testing real time difficulty customization</p>
+        <form action="" id="question">
+            <input type="radio" name="answer" value="a"> Answer 1<br>
+            <input type="radio" name="answer" value="b"> Answer 2<br>
+            <input type="radio" name="answer" value="c"> Answer 3<br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript">
+            var optionA = "a";
+            var optionB = "b";
+            var optionC = "c";
+            var answerResult = 0;
+            var correctAnswer = "";
+
+            var questionNumber = 1; // set equal to question number field
+            var questionID = 213; // set equal to question id field, 3 (213 / 71 = 3, 3 = c), 213 - 142 - 71
+            var difficultyLevel = "easy"; // set equal to question difficult level field
+
+            var levelRecords = [];
+            var resultLevels = [];
+
+            $('#question').on('submit', function () {
+                var answerSubmission = document.querySelector('input[name="answer"]:checked').value;
+
+                interpretAnswer(answerSubmission);
+                return false;
+            });
+
+            function interpretAnswer(answerSubmission) {
+                var answerID = questionID / 71;
+                if (answerID === 1) {
+                    correctAnswer = optionA;
+                } else if (answerID === 2) {
+                    correctAnswer = optionB;
+                } else if (answerID === 3) {
+                    correctAnswer = optionC;
+                } else {
+                    // error
+                }
+
+                interpretDifficulty(correctAnswer, answerSubmission);
+            }
+
+            function interpretDifficulty(correctAnswer, answerSubmission) {
+                if (correctAnswer === answerSubmission) {
+                    answerResult = 1; // correct
+                } else {
+                    answerResult = 0; // incorrect
+                }
+
+                saveResults(answerResult);
+            }
+
+            function saveResults(answerResult) {
+                resultLevels[questionNumber] = answerResult;
+                localStorage.setItem("resultLevels", JSON.stringify(resultLevels));
+                var storedResultLevels = JSON.parse(localStorage.getItem("resultLevels"));
+
+                levelRecords[questionNumber] = difficultyLevel;
+                localStorage.setItem("levelRecords", JSON.stringify(levelRecords));
+                var storedLevelRecords = JSON.parse(localStorage.getItem("levelRecords"));
+
+                console.log(storedResultLevels);
+                console.log(levelRecords);
+
+                determineDifficultyLevel();
+
+                questionNumber++; // delete later, for testing only
+            }
+
+            function determineDifficultyLevel() {
+                if ( (difficultyLevel === "easy") && ( resultLevels[questionNumber-1] === 1 ) && ( resultLevels[questionNumber] === 1 ) ) {
+                    console.log("change difficulty level to medium");
+                } else {
+                    // next
+                }
+            }
+        </script>
+    </body>
+</html>
