@@ -12,6 +12,8 @@
 
         <title><?php bloginfo('name'); ?></title>
 
+        <link rel="icon" type="image/x-icon" href="http://elevahoy.com/wp-content/uploads/2018/03/favicon.ico">
+
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -22,4 +24,3 @@
         <?php wp_head();?>
     </head>
     <body>
-        
