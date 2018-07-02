@@ -89,12 +89,12 @@ body {
     height: auto;
 }
 
-#welcome-box h1,
-#welcome-box p {
+#welcome-box h1 {
     margin-bottom: 40px;
 }
 
 #welcome-box p {
+    margin-bottom: 24px;
     font-size: 22px;
 }
 
@@ -102,6 +102,41 @@ body {
     background-color: #FF7484;
     font-size: 24px;
     padding: 6px 16px;
+}
+
+#mce-EMAIL {
+    float: right;
+    border: none;
+    border-bottom: 2px solid #FFF;
+    padding: 16px 12px;
+    background: none;
+    outline: none;
+    font-size: 16px;
+    width: 250px;
+}
+
+#mce-EMAIL::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #E5E5E5;
+    opacity: 1; /* Firefox */
+}
+
+#mce-EMAIL:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #E5E5E5;
+}
+
+#mce-EMAIL::-ms-input-placeholder { /* Microsoft Edge */
+    color: #E5E5E5;
+}
+
+#mc-embedded-subscribe {
+    padding: 16px 12px !important;
+    background: #FF7484;
+    border: none;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    float: left;
 }
 
 .page-welcome {
@@ -160,21 +195,60 @@ body {
     height: 107px;*/
 }
 
+@media screen and (max-width: 991px) {
+    #welcome-wrap {
+        height: auto;
+    }
+
+    #welcome-box {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .navbar-brand > img {
+        max-width: 100px;
+    }
+
+    h1.canvas-page-title {
+        font-size: 24px !important;
+    }
+
+    #welcome-box p {
+        font-size: 18px;
+    }
+
+    #mce-EMAIL {
+        float: none;
+        text-align: center;
+    }
+
+    #mc-embedded-subscribe {
+        float: none;
+        text-align: center;
+        margin-top: 24px;
+        width: 250px;
+    }
+}
+
 @media screen and (max-width: 414px) {
     #welcome-box {
         padding-top: 40px;
+    }
+
+    .navbar-brand > img {
+        max-width: 75px;
     }
 
     #welcome-box img {
         max-width: 215px;
     }
 
-    #welcome-box h1 {
-        font-size: 30px;
+    h1.canvas-page-title {
+        font-size: 20px !important;
     }
 
     #welcome-box p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .page-welcome h1 {
